@@ -72,10 +72,12 @@ function InsightsPage() {
           {list.map(a => (
             <a className="ins-list-card" key={a.id} href="#">
               <div className="ins-list-media"><div className={`ph ${a.ph}`}></div></div>
-              <div className="meta"><span className="tag">{a.cat}</span><span>{a.date}</span><span>{a.read} read</span></div>
-              <h3>{a.title}</h3>
-              <p>{a.excerpt}</p>
-              <div className="read">Read article →</div>
+              <div className="ins-list-body">
+                <div className="meta"><span className="tag">{a.cat}</span><span>{a.date}</span><span>{a.read} read</span></div>
+                <h3>{a.title}</h3>
+                <p>{a.excerpt}</p>
+                <div className="read">Read article →</div>
+              </div>
             </a>
           ))}
         </div>

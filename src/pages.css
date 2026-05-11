@@ -235,11 +235,19 @@
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 28px;
   max-width: 1380px; margin: 0 auto; padding: 0 40px;
 }
-.ins-list-card { display: flex; flex-direction: column; gap: 18px; }
+.ins-list-card { 
+  display: flex; flex-direction: column; 
+  background: var(--white);
+  border: 1px solid var(--line);
+  transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s;
+  height: 100%;
+}
+.ins-list-card:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -20px rgba(20,40,60,0.18); }
 .ins-list-media { aspect-ratio: 4/3; overflow: hidden; position: relative; background: var(--bg-2); }
 .ins-list-media .ph { position: absolute; inset: 0; transition: transform 0.7s cubic-bezier(.2,.6,.2,1); }
 .ins-list-card:hover .ph { transform: scale(1.04); }
-.ins-list-card h3 { font-family: var(--display); font-size: 26px; font-weight: 500; line-height: 1.2; letter-spacing: -0.005em; margin: 0; color: var(--ink); }
+.ins-list-body { padding: 28px; display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.ins-list-card h3 { font-family: var(--display); font-size: 24px; font-weight: 500; line-height: 1.2; letter-spacing: -0.005em; margin: 0; color: var(--ink); }
 .ins-list-card:hover h3 { color: var(--sea); }
 .ins-list-card .meta {
   font-family: var(--sans); font-size: 11px; font-weight: 600;
@@ -248,7 +256,7 @@
 }
 .ins-list-card .meta .tag { color: var(--sea); }
 .ins-list-card p { font-size: 15px; line-height: 1.6; color: var(--muted); margin: 0; }
-.ins-list-card .read { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sea); display: inline-flex; align-items: center; gap: 8px; }
+.ins-list-card .read { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sea); display: inline-flex; align-items: center; gap: 8px; margin-top: auto; }
 
 /* ============== Contact ============== */
 .contact-grid {
