@@ -222,7 +222,7 @@ function Founder() {
       <div className="wrap">
         <div className="founder-grid">
           <Reveal className="founder-img">
-            <ZoomFrame className="ph"></ZoomFrame>
+            <ZoomFrame className="layout-img" style={{ backgroundImage: `url(/uploads/JL.png)`, position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center' }}></ZoomFrame>
           </Reveal>
           <Reveal>
             <div className="founder-body">

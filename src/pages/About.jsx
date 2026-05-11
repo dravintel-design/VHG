@@ -70,7 +70,7 @@ function RevealA({ children, className = "", as = "div", delay = 0 }) {
   return <Tag ref={ref} className={`reveal ${inView ? "in" : ""} ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</Tag>;
 }
 
-function ZoomA({ children, className = "" }) {
+function ZoomA({ children, className = "", style = {} }) {
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current; if (!el) return;
@@ -86,7 +86,7 @@ function ZoomA({ children, className = "" }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  return <div ref={ref} className={`zoom-img ${className}`}>{children}</div>;
+  return <div ref={ref} className={`zoom-img ${className}`} style={style}>{children}</div>;
 }
 
 function AboutHero() {
@@ -242,7 +242,7 @@ function FounderMessage() {
       <div className="wrap">
         <div className="fm-grid">
           <RevealA className="fm-media">
-            <ZoomA className="ph"></ZoomA>
+            <ZoomA className="layout-img" style={{ backgroundImage: `url(/uploads/JL.png)`, position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center' }}></ZoomA>
           </RevealA>
           <RevealA className="fm-body" delay={120}>
             <div className="eyebrow">Founder's Message</div>
