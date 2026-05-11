@@ -19,31 +19,9 @@ const PROJECTS = [
   { id: 12, name: "JL Industry", loc: "Navamalkapper", cat: "Commercial", status: "Completed", price: "Sold Out", area: "24,634", plots: "3", rera: "-", img: "/layouts/jkr-city.png" },
 ];
 
-const FILTERS = [
-  { id: "all", label: "All Projects" },
-  { id: "Residential", label: "Residential" },
-  { id: "Gated", label: "Gated Communities" },
-  { id: "Farm", label: "Farm Plots" },
-  { id: "Premium", label: "Premium" },
-  { id: "Commercial", label: "Commercial" },
-];
-const STATUSES = [
-  { id: "any", label: "Any Status" },
-  { id: "New Launch", label: "New Launches" },
-  { id: "Selling", label: "Now Selling" },
-  { id: "Completed", label: "Completed" },
-];
-
 function PinIcon() { return <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 11s4-3.5 4-7a4 4 0 10-8 0c0 3.5 4 7 4 7z" stroke="currentColor" strokeWidth="1.2"/><circle cx="6" cy="4.2" r="1.4" fill="currentColor"/></svg>; }
 
 function PropertiesPage() {
-  const [cat, setCat] = useState("all");
-  const [status, setStatus] = useState("any");
-
-  const filtered = PROJECTS.filter(p =>
-    (cat === "all" || p.cat === cat) &&
-    (status === "any" || p.status === status)
-  );
 
   return (
     <React.Fragment>
@@ -58,25 +36,9 @@ function PropertiesPage() {
         </div>
       </section>
 
-      <div className="filter-bar">
-        <div className="filter-bar-inner">
-          {FILTERS.map(f => (
-            <button key={f.id} className={`filter-chip ${cat === f.id ? "active" : ""}`} onClick={() => setCat(f.id)}>
-              {f.label}
-              {f.id !== "all" && <small>{PROJECTS.filter(p => p.cat === f.id).length}</small>}
-            </button>
-          ))}
-          <div className="filter-spacer"></div>
-          {STATUSES.map(s => (
-            <button key={s.id} className={`filter-chip ${status === s.id ? "active" : ""}`} onClick={() => setStatus(s.id)}>{s.label}</button>
-          ))}
-          <div className="filter-result"><b>{filtered.length}</b> of {PROJECTS.length}</div>
-        </div>
-      </div>
-
       <section className="page-body" data-screen-label="02 Properties List">
         <div className="proj-list">
-          {filtered.map(p => (
+          {PROJECTS.map(p => (
             <article className="proj-list-card" key={p.id}>
               <div className="proj-list-media">
                 <div className="layout-img" style={{ backgroundImage: `url(${p.img})`, position: 'absolute', inset: 0 }}></div>
@@ -95,7 +57,6 @@ function PropertiesPage() {
               </div>
             </article>
           ))}
-          {filtered.length === 0 && <div style={{gridColumn:"1/-1",textAlign:"center",padding:80,color:"var(--muted)"}}>No projects match these filters.</div>}
         </div>
       </section>
 
