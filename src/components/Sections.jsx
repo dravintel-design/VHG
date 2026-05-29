@@ -117,7 +117,7 @@ function Achievements() {
 // ====================== PROJECTS =================
 const PROJECTS = [
   { img: "/layouts/mahalakshmi-nagar.png", tag: "Ongoing", name: "Mahalakshmi Nagar", loc: "Perambalur", status: "Selling", size: "95,348 sq.ft", price: "Contact Us", plots: "74 Plots", phLabel: "AERIAL · LAYOUT" },
-  { img: "/layouts/jkr-city.png", tag: "New Launch", name: "Global City", loc: "Puthirankottai", status: "Selling", size: "61,028 sq.ft", price: "Contact Us", plots: "47 Plots", phLabel: "RESIDENTIAL · PLOTS" },
+  { img: "/layouts/GlobalCityArch.jpeg", tag: "New Launch", name: "Global City", loc: "Puthirankottai", status: "Selling", size: "61,028 sq.ft", price: "Contact Us", plots: "47 Plots", phLabel: "RESIDENTIAL · PLOTS" },
   { img: "/layouts/golden-city.png", tag: "New Launch", name: "Golden City", loc: "Kariayamanikam", status: "Selling", size: "73,013 sq.ft", price: "Contact Us", plots: "61 Plots", phLabel: "PREMIUM · PLOTS" },
   { img: "/layouts/jkr-city.png", tag: "Completed", name: "JL Industry", loc: "Navamalkapper", status: "Delivered", size: "24,634 sq.ft", price: "Sold Out", plots: "3 Plots", phLabel: "COMMERCIAL · ZONE" },
   { img: "/layouts/smv-nagar.png", tag: "Completed", name: "Sundaramurthi Vinayagar Nagar", loc: "Perangiyur", status: "Delivered", size: "57,833 sq.ft", price: "Sold Out", plots: "47 Plots", phLabel: "GATED · COMMUNITY" },

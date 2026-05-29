@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import '../about.css';
 // About page combines Our Story, Vision & Mission, Founder's Message, FAQs
 
 const TIMELINE = [

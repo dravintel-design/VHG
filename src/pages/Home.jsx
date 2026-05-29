@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Tweaks from '../components/Tweaks';
 // Sections might contain inner components
-import { Achievements, Projects, Value, Founder, Testimonials, HomeInsights, Connect, CtaBand } from '../components/Sections';
+import { Achievements, Value, Founder, Testimonials, CtaBand } from '../components/Sections';
 import PropertyShowcase from '../components/PropertyShowcase';
 
 // Root app
@@ -15,12 +15,9 @@ function App() {
       <Hero />
       <PropertyShowcase />
       <Achievements />
-      <Projects />
       <Value />
       <Founder />
       <Testimonials />
-      <HomeInsights />
-      <Connect />
       <CtaBand />
       <Footer />
       <Tweaks />

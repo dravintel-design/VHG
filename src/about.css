@@ -120,28 +120,60 @@
   margin-bottom: 28px;
 }
 
-/* Timeline */
-.timeline { margin-top: 48px; }
+/* Creative Roadmap Timeline */
+.timeline { margin-top: 48px; position: relative; padding-left: 28px; }
+.timeline::before {
+  content: ""; position: absolute;
+  top: 42px; bottom: 0; left: 4px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--sea) 0%, rgba(201, 155, 20, 0.1) 100%);
+  border-radius: 2px;
+}
 .timeline h3 {
   font-family: var(--sans); font-size: 12px; font-weight: 600;
   letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--muted-dark); margin: 0 0 20px;
+  color: var(--muted-dark); margin: 0 0 32px -28px;
 }
 .timeline-row {
-  display: grid; grid-template-columns: 90px 1fr; gap: 20px;
-  padding: 18px 0;
-  border-top: 1px solid var(--line);
+  display: block; position: relative;
+  padding: 0 0 40px 0; border: none;
 }
-.timeline-row:last-child { border-bottom: 1px solid var(--line); }
+.timeline-row::before {
+  content: ""; position: absolute;
+  left: -28px; top: 7px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--sea);
+  box-shadow: 0 0 0 4px var(--bg);
+  z-index: 2; transition: all 0.3s ease;
+}
+.timeline-row:hover::before {
+  background: var(--sea);
+  box-shadow: 0 0 0 4px rgba(201, 155, 20, 0.2);
+}
+.timeline-row:last-child { padding-bottom: 0; }
 .timeline-year {
-  font-family: var(--display); font-size: 28px;
-  color: var(--sea); font-weight: 500;
+  font-family: var(--display); font-size: 24px;
+  color: var(--sea); font-weight: 600;
+  line-height: 1; margin-bottom: 12px;
+}
+.timeline-event {
+  background: var(--white); padding: 20px 24px;
+  border-radius: 12px; border: 1px solid var(--line);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.timeline-row:hover .timeline-event {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  border-color: rgba(201, 155, 20, 0.3);
 }
 .timeline-event h4 {
-  font-family: var(--sans); font-size: 15px; font-weight: 600;
-  margin: 4px 0 4px; color: var(--ink);
+  font-family: var(--sans); font-size: 16px; font-weight: 600;
+  margin: 0 0 6px; color: var(--ink);
 }
-.timeline-event p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.55; }
+.timeline-event p { font-size: 14.5px; color: var(--muted); margin: 0; line-height: 1.6; }
 
 /* Vision Mission */
 .vm { padding: 140px 0; background: var(--bg-2); }

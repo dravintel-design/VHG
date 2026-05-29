@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import vhgLogo from '../assets/VHG-Logo-Final.png';
 
 const NAV_ROUTES = {
+  Home: "/",
   About: "/about",
-  Properties: "/properties",
-  "Partner Programs": "/partners",
-  Insights: "/insights",
+  Projects: "/properties",
   Contact: "/contact",
 };
 
@@ -39,6 +38,11 @@ function Nav() {
                 key={k}
                 className="nav-link"
                 to={NAV_ROUTES[k]}
+                onClick={() => {
+                  if (k === 'Home' && window.location.pathname === '/') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
               >
                 {k}
               </Link>
@@ -46,7 +50,6 @@ function Nav() {
           </div>
 
           <div className="nav-cta">
-            <Link className="nav-btn" to="/partners">Be a Partner</Link>
             <Link className="nav-btn solid" to="/contact">Get in Touch</Link>
           </div>
 
@@ -70,13 +73,17 @@ function Nav() {
             key={k}
             className="nav-drawer-link"
             to={NAV_ROUTES[k]}
-            onClick={() => setDrawerOpen(false)}
+            onClick={() => {
+              setDrawerOpen(false);
+              if (k === 'Home' && window.location.pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
           >
             {k}
           </Link>
         ))}
         <div className="nav-drawer-cta">
-          <Link className="nav-btn" to="/partners" onClick={() => setDrawerOpen(false)}>Be a Partner</Link>
           <Link className="nav-btn solid" to="/contact" onClick={() => setDrawerOpen(false)}>Get in Touch</Link>
         </div>
       </div>

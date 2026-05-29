@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 const PROJECTS = [
   // Ongoing
   { id: 1, name: "Mahalakshmi Nagar", loc: "Perambalur", cat: "Residential", status: "Selling", price: "Contact Us", area: "95,348", plots: "74", rera: "Applied", img: "/layouts/mahalakshmi-nagar.png", badge: "Ongoing" },
-  { id: 2, name: "Global City", loc: "Puthirankottai", cat: "Residential", status: "New Launch", price: "Contact Us", area: "61,028", plots: "47", rera: "Applied", img: "/layouts/jkr-city.png", badge: "New Launch" },
+  { id: 2, name: "Global City", loc: "Puthirankottai", cat: "Residential", status: "New Launch", price: "Contact Us", area: "61,028", plots: "47", rera: "Applied", img: "/layouts/GlobalCityArch.jpeg", badge: "New Launch" },
   { id: 3, name: "Golden City", loc: "Kariayamanikam", cat: "Residential", status: "New Launch", price: "Contact Us", area: "73,013", plots: "61", rera: "Applied", img: "/layouts/golden-city.png", badge: "New Launch" },
   // Completed
   { id: 4, name: "Sri Thanvanthiri Swamy Nagar", loc: "Panruti", cat: "Residential", status: "Completed", price: "Sold Out", area: "12,488", plots: "11", rera: "-", img: "/layouts/sri-thanvanthri.png" },

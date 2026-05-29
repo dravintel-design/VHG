@@ -19,8 +19,8 @@
   --on-dark: #ffffff;
   --on-dark-2: rgba(255,255,255,0.86);
   --on-dark-3: rgba(255,255,255,0.65);
-  --display: "Cormorant Garamond", "Times New Roman", serif;
-  --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sans: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
   --nav-h: 84px;
 }
@@ -287,7 +287,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   color: var(--white);
   text-shadow: 0 2px 24px rgba(10, 10, 10, 0.45);
 }
-.hero-title .word { display: inline-block; overflow: hidden; vertical-align: baseline; }
+.hero-title .word { display: inline-block; overflow: hidden; vertical-align: baseline; padding-bottom: 0.2em; margin-bottom: -0.2em; }
 .hero-title .word > span { display: inline-block; transform: translateY(110%); animation: wordUp 1s cubic-bezier(.2,.7,.2,1) forwards; }
 @keyframes wordUp { to { transform: translateY(0); } }
 @keyframes fadeUp {
@@ -733,7 +733,7 @@ section { padding: 120px 0; position: relative; }
 
 .section-subnav {
   background: var(--bg-2);
-  position: sticky; top: var(--nav-h); z-index: 40;
+  position: sticky; top: 68px; z-index: 40;
 }
 .section-subnav-inner {
   max-width: 1440px; margin: 0 auto; padding: 0;

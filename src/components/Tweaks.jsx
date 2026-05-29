@@ -22,7 +22,7 @@ function Tweaks() {
     document.documentElement.style.setProperty("--accent", t.accent || "#c99b14");
     document.documentElement.style.setProperty("--sea", t.sea || "#c99b14");
     if (t.displayFont) {
-      document.documentElement.style.setProperty("--display", `"${t.displayFont}", Georgia, serif`);
+      document.documentElement.style.setProperty("--display", `"${t.displayFont}", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`);
     }
     window.__TWEAKS = t;
     // Hide/show search bar
@@ -47,6 +47,7 @@ function Tweaks() {
 
       <label>Display font</label>
       <select value={t.displayFont} onChange={(e) => update("displayFont", e.target.value)}>
+        <option>Proxima Nova</option>
         <option>Cormorant Garamond</option>
         <option>Playfair Display</option>
         <option>DM Serif Display</option>

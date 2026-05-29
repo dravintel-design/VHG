@@ -3,8 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const SCENES = [
   { bg: "bg-scene-1", kicker: "Featured Layout", title: ["A", "Living", "Landscape"], location: "Vel Serenity · Oragadam" },
-  { bg: "bg-scene-2", kicker: "New Launch", title: ["An", "Enduring", "Address"], location: "Vel Aranya · Hosur Belt" },
-  { bg: "bg-scene-3", kicker: "Flagship", title: ["A", "Coastline", "of", "Prosperity"], location: "Vel Vistas · ECR Coastline" },
+  { bg: "bg-scene-2", kicker: "New Launch", title: ["An", "Enduring", "Address"], location: "Vel Aranya · Hosur Belt" }
 ];
 
 function AnimatedTitle({ title, keyBase }) {
@@ -67,10 +66,7 @@ function Hero() {
         ))}
       </div>
 
-      <div className="hero-meta">
-        <svg width="14" height="18" viewBox="0 0 14 18" fill="none"><path d="M7 0C3.13 0 0 3.13 0 7c0 5.25 7 11 7 11s7-5.75 7-11c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" fill="currentColor"/></svg>
-        <span key={"l" + animKey}>{scene.location}</span>
-      </div>
+
 
       <div className="scroll-cue">
         <span>Scroll</span>
