@@ -156,8 +156,8 @@ function PropertyShowcase() {
       </div>
 
       {/* Tab Bar */}
-      <div className="section-subnav">
-        <div className="section-subnav-inner">
+      <div className="ps-subnav">
+        <div className="ps-subnav-inner">
           <a href="#details" className={activeTab === "details" ? "active" : ""} onClick={(e) => handleTabClick(e, "details")}>Property Details</a>
           <a href="#layout" className={activeTab === "layout" ? "active" : ""} onClick={(e) => handleTabClick(e, "layout")}>Layout</a>
           <a href="#location" className={activeTab === "location" ? "active" : ""} onClick={(e) => handleTabClick(e, "location")}>Location</a>
