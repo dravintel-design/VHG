@@ -737,20 +737,20 @@ section { padding: 120px 0; position: relative; }
 }
 .section-subnav-inner {
   max-width: 1440px; margin: 0 auto; padding: 0;
-  display: flex; gap: 0; height: 64px; align-items: stretch;
+  display: flex; gap: 0; height: 64px; align-items: stretch !important;
   overflow-x: auto; scrollbar-width: none;
 }
 .section-subnav-inner a {
   flex: 1; display: flex; align-items: center; justify-content: center;
   font-size: 14px; font-weight: 500; color: var(--ink);
   white-space: nowrap; padding: 0 24px;
-  height: 100%;
+  height: 100% !important;
   transition: background 0.3s, color 0.3s;
 }
 .section-subnav-inner a:hover { background: rgba(0,0,0,0.05); }
 .section-subnav-inner a.active { 
-  background: var(--ink);
-  color: var(--white);
+  background: var(--ink) !important;
+  color: var(--white) !important;
 }
 
 .story { background: var(--bg); }
