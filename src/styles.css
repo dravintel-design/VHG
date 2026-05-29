@@ -747,7 +747,7 @@ section { padding: 120px 0; position: relative; }
   transition: background 0.3s, color 0.3s;
 }
 .section-subnav-inner a:hover { background: rgba(0,0,0,0.05); }
-.section-subnav-inner a.active { background: var(--ink); color: var(--white); }
+.section-subnav-inner a.active { background: var(--sea); color: #ffffff; }
 
 .story { background: var(--bg); }
 .story-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: start; }
