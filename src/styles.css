@@ -749,8 +749,8 @@ section { padding: 120px 0; position: relative; }
 }
 .section-subnav-inner a:hover { background: rgba(0,0,0,0.05); }
 .section-subnav-inner a.active { 
-  background: var(--sea);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--white);
 }
 
 .story { background: var(--bg); }
