@@ -317,22 +317,23 @@ function PropertyShowcase({ propertyId }) {
             <h2 style={{ fontSize: '32px', color: '#ffffff', margin: 0 }}>Project Amenities</h2>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '40px', alignItems: 'center' }}>
+          <div className="ps-amenities-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '40px', alignItems: 'center' }}>
             {/* Left Media - Amenities Image */}
             <div style={{ width: '100%' }}>
               {activeProp.amenitiesImg ? (
-                <img 
-                  src={activeProp.amenitiesImg} 
-                  alt={`${activeProp.name} Amenities`} 
-                  style={{ 
-                    width: '100%', 
-                    aspectRatio: '16/9', 
-                    objectFit: 'cover', 
-                    borderRadius: 'var(--ds-radius-none)', 
+                <img
+                  src={activeProp.amenitiesImg}
+                  alt={`${activeProp.name} Amenities`}
+                  className="ps-amenities-img"
+                  style={{
+                    width: '100%',
+                    aspectRatio: '16/9',
+                    objectFit: 'cover',
+                    borderRadius: 'var(--ds-radius-none)',
                     display: 'block',
                     WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
                     maskImage: 'linear-gradient(to right, black 50%, transparent 100%)'
-                  }} 
+                  }}
                 />
               ) : (
                 <div style={{ backgroundColor: 'rgba(255,255,255,0.03)', width: '100%', aspectRatio: '16/9', borderRadius: 'var(--ds-radius-none)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.08)' }}>
@@ -342,7 +343,7 @@ function PropertyShowcase({ propertyId }) {
             </div>
             
             {/* Right Details - Creative Amenities Cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+            <div className="ps-amenities-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(activeProp.name === "Golden City" ? GOLDEN_CITY_AMENITIES : AMENITIES_DATA).map((item, idx) => (
                 <div key={idx} className="creative-amenity-card" style={{ justifyContent: 'center', textAlign: 'center' }}>
                   <span style={{ fontWeight: 600, color: '#ffffff', fontSize: '15px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{item}</span>

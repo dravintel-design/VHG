@@ -1084,7 +1084,7 @@ section { padding: 120px 0; position: relative; }
   .page-hero-inner, .about-hero-inner, .ps-subnav-inner, .section-subnav-inner,
   .filter-bar-inner, .proj-list, .page-body { padding-left: 24px; padding-right: 24px; }
 
-  .hero-content { padding: calc(var(--nav-h) + 32px) 24px 300px; }
+  .hero-content { padding: calc(var(--nav-h) + 32px) 24px 120px; }
   .hero-title { flex-direction: column; gap: 0; font-size: clamp(44px,11vw,80px); }
   .hero-title .title-left, .hero-title .title-right { text-align: center; }
   .hero-title .title-spacer { display: none; }
@@ -1505,4 +1505,59 @@ section { padding: 120px 0; position: relative; }
 
 @media (max-width: 640px) {
   .ps-launch-nav { gap: 20px; }
+}
+
+/* ============================================================
+   MOBILE OPTIMIZATION — phone-first polish
+   Overrides inline-styled showcase grids (needs !important to
+   beat inline styles) and tightens spacing on small screens.
+   ============================================================ */
+
+/* Guard against accidental horizontal scroll on phones */
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+
+  /* Property showcase — amenities section stacks */
+  .ps-amenities-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .ps-amenities-img {
+    /* drop the right-edge fade mask once stacked — looks odd full-width */
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  /* Showcase content rhythm */
+  .ps-content { padding: 40px 0 72px; }
+  .ps-details { padding: 8px 0; }
+
+  /* Sub-tab nav becomes a horizontal scroll strip instead of cramming */
+  .ps-subnav-inner {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+  .ps-subnav-inner::-webkit-scrollbar { display: none; }
+  .ps-subnav-inner a { font-size: 13px; flex: 0 0 auto; }
+
+  /* New Launch selector — comfortable wrap, less side padding */
+  .ps-selector-wrap .wrap { padding: 0 24px !important; }
+  .ps-launch-nav { gap: 18px 24px; }
+  .ps-launch-label { width: 100%; text-align: center; }
+
+  /* Amenities outer padding */
+  .ps-amenities-grid + *, .ps-amenities-cards { gap: 12px !important; }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .ps-stats-grid { grid-template-columns: 1fr; gap: 22px; }
+  .ps-amenities-cards { grid-template-columns: 1fr !important; }
+  .ps-title { font-size: 34px; }
+  .ps-launch-nav { gap: 14px 20px; }
+
+  /* Projects menu: a touch more breathing room on tiny screens */
+  .projects-menu-panel { padding: 28px 24px; }
+  .projects-menu-list a { font-size: 17px; }
 }
