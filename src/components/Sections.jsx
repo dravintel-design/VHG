@@ -250,20 +250,13 @@ function Founder() {
 }
 
 // ====================== TESTIMONIALS =================
-const TESTIMONIALS = [
-  { quote: "VHG handed over the plot exactly as promised title cleared, survey marked, and infrastructure in place before we registered. Fourteen months later, the valuation had grown 34%.", name: "R. Senthilkumar", role: "Owner · Vel Serenity · Plot 42", loc: "Chennai" },
-  { quote: "I've invested through three developers in Tamil Nadu. Only VHG gave me a dedicated relationship manager who still answers my calls four years after the purchase.", name: "Meera Rajagopalan", role: "Investor · Vel Vistas", loc: "Bengaluru" },
-  { quote: "As a landowner, the Alliance Program gave us a fair share of upside while VHG handled every permission, survey, and marketing concern. My father would be proud.", name: "A. Krishnamurthy", role: "Land Partner · Hosur Belt", loc: "Krishnagiri" },
+const TESTIMONIAL_VIDEOS = [
+  { id: "S_g11B489r0", start: 1 },
+  { id: "a9rmN10oItE", start: 25 },
+  { id: "4-qtrKs2aPk", start: 0 },
 ];
 
 function Testimonials() {
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setI(x => (x + 1) % TESTIMONIALS.length), 7000);
-    return () => clearInterval(t);
-  }, []);
-  const cur = TESTIMONIALS[i];
-
   return (
     <section className="testimonials" id="testimonials" data-screen-label="06 Testimonials">
       <div className="wrap">
@@ -271,20 +264,17 @@ function Testimonials() {
           <div className="eyebrow" style={{color:"var(--gold)"}}>Trusted by 500+ families</div>
           <h2>Families, investors & institutions <br/>trusted with their heart<br/><span className="italic-accent">and soul in VHG.</span></h2>
         </Reveal>
-        <div className="testimonial-card" key={i}>
-          <div className="quote-mark">"</div>
-          <blockquote>{cur.quote}</blockquote>
-          <div className="testimonial-meta">
-            <div className="avatar"></div>
-            <div style={{textAlign:"left"}}>
-              <b>{cur.name}</b>
-              <small>{cur.role} · {cur.loc}</small>
-            </div>
-          </div>
-        </div>
-        <div className="testimonial-nav">
-          {TESTIMONIALS.map((_, idx) => (
-            <div key={idx} className={`t-dot ${idx === i ? "active" : ""}`} onClick={() => setI(idx)} />
+        <div className="testimonial-videos">
+          {TESTIMONIAL_VIDEOS.map((v, idx) => (
+            <Reveal key={v.id} className="testimonial-video" delay={idx * 90}>
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${v.id}?start=${v.start}&rel=0&modestbranding=1`}
+                title={`VHG testimonial ${idx + 1}`}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </Reveal>
           ))}
         </div>
       </div>
