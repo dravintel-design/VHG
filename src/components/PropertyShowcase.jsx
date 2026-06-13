@@ -153,33 +153,14 @@ function PropertyShowcase({ propertyId }) {
       {/* Selection Tabs */}
       {!propertyId && (
       <div className="ps-selector-wrap" style={{ background: 'var(--ds-bg-dark)', borderBottom: '1px solid var(--ds-border)', paddingTop: 'var(--ds-space-10)', paddingBottom: 'var(--ds-space-10)' }}>
-        <div className="wrap" style={{ padding: '0 60px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
-          
-          <h3 style={{ margin: 0, color: 'var(--accent-bright)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.15em', fontWeight: 700 }}>Our New Launch</h3>
-          
-          <div style={{ display: 'flex', gap: '16px', padding: '0', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div className="wrap" style={{ padding: '0 60px' }}>
+          <div className="ps-launch-nav">
+            <span className="ps-launch-label">New Launch:</span>
             {VEL_PROPERTIES.map(p => (
-              <button 
+              <button
                 key={p.id}
                 onClick={() => setActivePropId(p.id)}
-                className={`ps-prop-btn ${activePropId === p.id ? 'active' : ''}`}
-                style={{
-                  background: activePropId === p.id ? 'var(--ds-accent)' : 'rgba(255,255,255,0.1)',
-                  color: activePropId === p.id ? 'var(--vhg-ink-950)' : 'var(--vhg-white)',
-                  border: '1px solid',
-                  borderColor: activePropId === p.id ? 'var(--ds-accent)' : 'rgba(255,255,255,0.2)',
-                  padding: '12px 28px',
-                  borderRadius: '50px',
-                  cursor: 'pointer',
-                  fontWeight: 600,
-                  fontSize: '14px',
-                  letterSpacing: '0.02em',
-                  transition: 'all 0.3s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  whiteSpace: 'nowrap'
-                }}
+                className={`ps-launch-item ${activePropId === p.id ? 'active' : ''}`}
               >
                 {p.name}
               </button>

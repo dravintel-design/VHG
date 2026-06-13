@@ -257,7 +257,7 @@ function FounderMessage() {
             <p>Our journey is driven by a belief that real estate should connect communities and create value that lasts generations. If you are reading this, you are already part of that story.</p>
 
             <div className="fm-sign">
-              <div className="fm-sign-mark">J.</div>
+              <div className="fm-sign-mark">JL</div>
               <div>
                 <b>Mr. Jambulingam</b>
                 <small>Founder & CEO · Vel Homes Global</small>

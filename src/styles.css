@@ -230,6 +230,17 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   color: var(--white);
   background: var(--ink);
 }
+/* One-time fade-from-dark curtain — guarantees a smooth landing even
+   before the large hero image has finished decoding. Sits above the
+   background but below the hero content (z-index 3). */
+.hero::after {
+  content: "";
+  position: absolute; inset: 0; z-index: 2;
+  background: var(--ink);
+  pointer-events: none;
+  animation: heroCurtain 1.6s var(--ds-ease, ease) forwards;
+}
+@keyframes heroCurtain { to { opacity: 0; visibility: hidden; } }
 .layout-img {
   background-size: cover !important;
   background-position: center !important;
@@ -247,11 +258,23 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .hero-bg {
   position: absolute; inset: 0;
-  transform: scale(1.06);
+  transform: scale(1.12);
   transition: opacity 1.2s ease;
+  will-change: transform, opacity;
 }
-.hero-bg.active { opacity: 1; }
+/* Active scene eases in with a gentle zoom-out "settle", then drifts
+   slowly for life. Opacity stays on the transition above so the
+   scene-to-scene cross-fade is unaffected. */
+.hero-bg.active {
+  opacity: 1;
+  animation: heroKenBurns 12s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
 .hero-bg:not(.active) { opacity: 0; }
+@keyframes heroKenBurns {
+  0%   { transform: scale(1.14); }
+  35%  { transform: scale(1.06); }
+  100% { transform: scale(1.09); }
+}
 .hero-bg::before {
   content: ""; position: absolute; inset: 0;
   background: rgba(10, 10, 10, 0.4);
@@ -1414,4 +1437,57 @@ section { padding: 120px 0; position: relative; }
   .proj-card:hover, .proj-list-card:hover { transform: none; }
   .proj-card:hover .layout-img, .proj-list-card:hover .layout-img,
   .ps-media:hover .layout-img { transform: none; }
+  /* Hero: keep the gentle fade-in, drop the motion */
+  .hero-bg, .hero-bg.active { transform: none; animation: none; }
+  .hero::after { animation: heroCurtain 0.6s ease forwards; }
+}
+
+/* ---- New Launch selector (home showcase) — inline text nav ---- */
+.ps-launch-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 36px;
+}
+.ps-launch-label {
+  color: var(--vhg-on-dark-2);
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-body);
+  font-weight: var(--ds-weight-regular);
+  white-space: nowrap;
+}
+.ps-launch-item {
+  position: relative;
+  background: none;
+  border: 0;
+  padding: 6px 0;
+  cursor: pointer;
+  color: var(--vhg-white);
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-body);
+  font-weight: var(--ds-weight-regular);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: color var(--ds-duration-base) var(--ease-editorial, ease);
+}
+.ps-launch-item::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 3px;
+  background: var(--ds-accent);
+  border-radius: var(--ds-radius-pill);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--ds-duration-base) var(--ease-editorial, ease);
+}
+.ps-launch-item:hover { color: var(--accent-bright); }
+.ps-launch-item.active {
+  font-weight: var(--ds-weight-bold);
+}
+.ps-launch-item.active::after { transform: scaleX(1); }
+
+@media (max-width: 640px) {
+  .ps-launch-nav { gap: 20px; }
 }

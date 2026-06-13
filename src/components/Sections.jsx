@@ -235,7 +235,7 @@ function Founder() {
               <p>We believed every family should own land with confidence, and every investor should see measurable growth from their decision. Each project we launch is personally overseen to ensure our customers get more than plots they get peace of mind and a foundation for their future.</p>
               <p>Our journey is driven by a belief that real estate should connect communities and create value that lasts generations.</p>
               <div className="founder-sign">
-                <div style={{fontFamily:"var(--display)", fontSize:28, fontStyle:"italic", color:"var(--gold)"}}>J.</div>
+                <div style={{fontFamily:"var(--display)", fontSize:28, fontStyle:"italic", color:"var(--gold)"}}>JL</div>
                 <div>
                   <b>Mr. Jambulingam</b>
                   <small>Founder & CEO · Vel Homes Global</small>

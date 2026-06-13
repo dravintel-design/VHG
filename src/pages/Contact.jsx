@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", interest: "Site visit", project: "Any project", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", interest: "Site visit", project: "Golden City", message: "" });
   const upd = (k, v) => setForm({ ...form, [k]: v });
   const submit = (e) => { e.preventDefault(); setSent(true); };
 
@@ -64,12 +64,10 @@ function ContactPage() {
                   <div className="field">
                     <label htmlFor="project">Project / Corridor</label>
                     <select id="project" value={form.project} onChange={e => upd("project", e.target.value)}>
-                      <option>Any project</option>
-                      <option>Vel Serenity · Oragadam</option>
-                      <option>Vel Aranya · Hosur</option>
-                      <option>Vel Vistas · ECR</option>
-                      <option>Vel Pravaaha · Coimbatore</option>
-                      <option>Other / Need advice</option>
+                      <option>Golden City</option>
+                      <option>Global City</option>
+                      <option>Mahalakshmi Nagar</option>
+                      <option>Other</option>
                     </select>
                   </div>
                   <div className="field full">
@@ -85,21 +83,15 @@ function ContactPage() {
           <aside className="contact-aside">
             <div className="contact-card">
               <div className="label">Head Office</div>
-              <h3>Chennai</h3>
-              <p>No. 42, Anna Salai, T. Nagar<br/>Chennai, Tamil Nadu 600017</p>
-              <p><a href="tel:+914444444444">+91 44 4444 4444</a></p>
-            </div>
-            <div className="contact-card">
-              <div className="label">Regional Office</div>
-              <h3>Coimbatore</h3>
-              <p>3rd Floor, Avinashi Road<br/>Coimbatore, Tamil Nadu 641018</p>
-              <p><a href="tel:+914224444444">+91 422 4444 444</a></p>
+              <h3>Villupuram</h3>
+              <p>Villupuram, Tamil Nadu</p>
+              <p><a href="tel:+917867868992">786 786 8992</a></p>
             </div>
             <div className="contact-card">
               <div className="label">Sales & Site Visits</div>
               <h3>Speak to a relationship manager</h3>
               <p>Monday–Saturday · 9am–7pm IST</p>
-              <p><a href="tel:+919999999999">+91 99999 99999</a><br/><a href="mailto:hello@velhomesglobal.com">hello@velhomesglobal.com</a></p>
+              <p><a href="tel:+917867868992">786 786 8992</a><br/><a href="mailto:hello@velhomesglobal.com">hello@velhomesglobal.com</a></p>
             </div>
             <div className="contact-card">
               <div className="label">For NRIs</div>
@@ -112,7 +104,7 @@ function ContactPage() {
 
         <div className="contact-map" data-screen-label="03 Map">
           <div className="contact-map-frame">
-            <div className="map-label">VHG Head Office · T. Nagar</div>
+            <div className="map-label">VHG Head Office · Villupuram</div>
             <div className="map-pin"></div>
           </div>
         </div>

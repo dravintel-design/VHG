@@ -13,10 +13,9 @@ function Footer() {
             </div>
             <p>Land with clarity. Ownership with confidence. A legacy you can walk.</p>
             <address>
-              No. 42, Anna Salai, T. Nagar<br />
-              Chennai, Tamil Nadu 600017<br />
+              Villupuram, Tamil Nadu<br />
               India<br /><br />
-              <a href="tel:+919999999999" style={{ color: "var(--gold)" }}>+91 99999 99999</a><br />
+              <a href="tel:+917867868992" style={{ color: "var(--gold)" }}>786 786 8992</a><br />
               <a href="mailto:hello@velhomesglobal.com" style={{ color: "var(--gold)" }}>hello@velhomesglobal.com</a>
             </address>
           </div>
