@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 // All major page sections
 
 // Hook for number count-up when in view
@@ -385,8 +386,18 @@ function CtaBand() {
           <h2>Every VHG development is built on<br/>clarity, quality &<br/><span className="italic-accent">commitment.</span></h2>
           <p>Whether you build, invest, or partner your journey to prosperity begins here.</p>
           <div className="cta-buttons">
-            <a className="btn primary" href="#">Book a Site Visit <span>→</span></a>
-            <a className="btn ghost" href="#">Explore Projects</a>
+            <Link className="btn primary" to="/contact">Book a Site Visit <span>→</span></Link>
+            <a
+              className="btn ghost"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.dispatchEvent(new CustomEvent('open-projects-menu'));
+              }}
+            >
+              Explore Projects
+            </a>
           </div>
         </Reveal>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
@@ -29,7 +30,7 @@ function PropertiesPage() {
 
       <section className="page-hero" data-screen-label="01 Properties Hero">
         <div className="page-hero-inner">
-          <div className="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Properties</span></div>
+          <div className="breadcrumb"><Link to="/">Home</Link><span>/</span><span>Properties</span></div>
           <div className="eyebrow" style={{color:"rgba(255,255,255,0.9)"}}>34 Completed · 9 Active</div>
           <h1>Land that <em>grows</em><br/>with your family.</h1>
           <p>Master-planned plotted developments across Tamil Nadu's fastest-growing corridors RERA-approved, infrastructure-ready, and backed by VHG's 24-month warranty.</p>

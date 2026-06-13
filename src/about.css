@@ -4,16 +4,16 @@
 .about-hero {
   position: relative;
   padding: 200px 0 120px;
-  background: linear-gradient(180deg, #6fa2c4 0%, #8fb8d2 60%, #a9c7db 100%);
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(212, 160, 23, 0.16) 0%, transparent 60%),
+    var(--ds-bg-dark);
   color: var(--white);
   text-align: center;
   overflow: hidden;
 }
 .about-hero::before {
   content: ""; position: absolute; inset: 0;
-  background:
-    linear-gradient(180deg, transparent 0 55%, rgba(55,85,70,0.4) 55% 75%, transparent 75%),
-    linear-gradient(180deg, transparent 0 78%, rgba(70,110,135,0.6) 78% 100%);
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><rect x='29' y='0' width='1' height='60' fill='rgba(255,255,255,0.04)'/><rect x='0' y='29' width='60' height='1' fill='rgba(255,255,255,0.04)'/></svg>") repeat;
 }
 .about-hero-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; padding: 0 40px; }
 .about-hero .eyebrow { color: var(--white); opacity: 0.9; }
@@ -24,7 +24,7 @@
   line-height: 1;
   letter-spacing: -0.02em;
   margin: 18px 0 24px;
-  text-shadow: 0 2px 20px rgba(20,35,50,0.3);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
 }
 .about-hero h1 em { font-style: italic; font-weight: 300; }
 .about-hero p {

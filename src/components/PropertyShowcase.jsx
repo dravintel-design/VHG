@@ -9,6 +9,15 @@ const AMENITIES_DATA = [
   "High raise walls"
 ];
 
+const GOLDEN_CITY_AMENITIES = [
+  "32 feet road",
+  "High ground water",
+  "Electricity",
+  "24 X 7 Bus Service",
+  "Schools and Colleges",
+  "High raise walls"
+];
+
 const VEL_PROPERTIES = [
   { 
     id: 2, 
@@ -35,8 +44,10 @@ const VEL_PROPERTIES = [
     soldPlots: "8",
     availablePlots: "53",
     locLink: "#",
-    img: "/layouts/golden-city.png",
-    layoutImg: "/layouts/golden-city.png"
+    img: "/layouts/golden-city-arch.png",
+    layoutImg: "/layouts/golden-city-layout.jpeg",
+    locationImg: "/layouts/golden-city-location.png",
+    amenitiesImg: "/layouts/golden-city-amenities.png"
   },
   { 
     id: 1, 
@@ -48,16 +59,37 @@ const VEL_PROPERTIES = [
     soldPlots: "59",
     availablePlots: "15",
     locLink: "#",
-    img: "/layouts/mahalakshmi-nagar.png",
-    layoutImg: "/layouts/mahalakshmi-nagar.png"
+    img: "/layouts/mahalakshmi-nagar-arch.png",
+    layoutImg: "/layouts/mahalakshmi-nagar-layout.jpeg",
+    locationImg: "/layouts/mahalakshmi-nagar-location.png",
+    amenitiesImg: "/layouts/mahalakshmi-nagar-amenities.png"
   }
 ];
 
-function PropertyShowcase() {
-  const [activePropId, setActivePropId] = useState(VEL_PROPERTIES[0].id); // First property as default
+const COMPLETED_PROPERTIES = [
+  { id: 4, name: "Sri Thanvanthiri Swamy Nagar", status: "Completed", location: "Panruti", area: "12,488 Sq.ft", totalPlots: "11", soldPlots: "11", availablePlots: "0", locLink: "#", img: "/layouts/sri-thanvanthri.png", layoutImg: "/layouts/sri-thanvanthri.png" },
+  { id: 5, name: "Udhayam Farm Land", status: "Completed", location: "Poothurai", area: "3,16,320 Sq.ft", totalPlots: "34", soldPlots: "34", availablePlots: "0", locLink: "#", img: "/layouts/udhayam-farm.png", layoutImg: "/layouts/udhayam-farm.png" },
+  { id: 6, name: "Om Ganapathy Nagar", status: "Completed", location: "Sulur", area: "27,065 Sq.ft", totalPlots: "19", soldPlots: "19", availablePlots: "0", locLink: "#", img: "/layouts/om-ganapathy.png", layoutImg: "/layouts/om-ganapathy.png" },
+  { id: 7, name: "JK Industrial", status: "Completed", location: "Navamalkapper", area: "1,55,021 Sq.ft", totalPlots: "16", soldPlots: "16", availablePlots: "0", locLink: "#", img: "/layouts/jkr-city.png", layoutImg: "/layouts/jkr-city.png" },
+  { id: 8, name: "Tamilvel Nagar", status: "Completed", location: "Siruvadi", area: "1,32,829 Sq.ft", totalPlots: "224", soldPlots: "224", availablePlots: "0", locLink: "#", img: "/layouts/tamilvel-nagar.png", layoutImg: "/layouts/tamilvel-nagar.png" },
+  { id: 9, name: "Selvavel Nagar", status: "Completed", location: "Siruvadi", area: "54,767 Sq.ft", totalPlots: "34", soldPlots: "34", availablePlots: "0", locLink: "#", img: "/layouts/selvavel-nagar.png", layoutImg: "/layouts/selvavel-nagar.png" },
+  { id: 10, name: "JKR City", status: "Completed", location: "V Agaram", area: "1,38,143 Sq.ft", totalPlots: "145", soldPlots: "145", availablePlots: "0", locLink: "#", img: "/layouts/jkr-city.png", layoutImg: "/layouts/jkr-city.png" },
+  { id: 11, name: "Sundaramurthi Vinayagar Nagar", status: "Completed", location: "Perangiyur", area: "57,833 Sq.ft", totalPlots: "47", soldPlots: "47", availablePlots: "0", locLink: "#", img: "/layouts/smv-nagar.png", layoutImg: "/layouts/smv-nagar.png" },
+  { id: 12, name: "JL Industry", status: "Completed", location: "Navamalkapper", area: "24,634 Sq.ft", totalPlots: "3", soldPlots: "3", availablePlots: "0", locLink: "#", img: "/layouts/jkr-city.png", layoutImg: "/layouts/jkr-city.png" },
+];
+
+const ALL_PROPERTIES = [...VEL_PROPERTIES, ...COMPLETED_PROPERTIES];
+
+function PropertyShowcase({ propertyId }) {
+  const [activePropId, setActivePropId] = useState(propertyId ?? VEL_PROPERTIES[0].id); // First property as default
+
+  // Keep in sync when navigating between project pages
+  useEffect(() => {
+    if (propertyId) setActivePropId(propertyId);
+  }, [propertyId]);
   const [activeTab, setActiveTab] = useState("details");
 
-  const activeProp = VEL_PROPERTIES.find(p => p.id === activePropId);
+  const activeProp = ALL_PROPERTIES.find(p => p.id === activePropId);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -119,7 +151,8 @@ function PropertyShowcase() {
   return (
     <section className="property-showcase" id="property-showcase" style={{ paddingBottom: 0 }}>
       {/* Selection Tabs */}
-      <div className="ps-selector-wrap" style={{ background: '#42637A', borderBottom: '1px solid #d6d6d6', paddingTop: '40px', paddingBottom: '40px' }}>
+      {!propertyId && (
+      <div className="ps-selector-wrap" style={{ background: 'var(--ds-bg-dark)', borderBottom: '1px solid var(--ds-border)', paddingTop: 'var(--ds-space-10)', paddingBottom: 'var(--ds-space-10)' }}>
         <div className="wrap" style={{ padding: '0 60px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
           
           <h3 style={{ margin: 0, color: 'var(--accent-bright)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.15em', fontWeight: 700 }}>Our New Launch</h3>
@@ -131,10 +164,10 @@ function PropertyShowcase() {
                 onClick={() => setActivePropId(p.id)}
                 className={`ps-prop-btn ${activePropId === p.id ? 'active' : ''}`}
                 style={{
-                  background: activePropId === p.id ? '#ffffff' : 'rgba(255,255,255,0.1)',
-                  color: activePropId === p.id ? '#2F2954' : '#ffffff',
+                  background: activePropId === p.id ? 'var(--ds-accent)' : 'rgba(255,255,255,0.1)',
+                  color: activePropId === p.id ? 'var(--vhg-ink-950)' : 'var(--vhg-white)',
                   border: '1px solid',
-                  borderColor: activePropId === p.id ? '#ffffff' : 'rgba(255,255,255,0.2)',
+                  borderColor: activePropId === p.id ? 'var(--ds-accent)' : 'rgba(255,255,255,0.2)',
                   padding: '12px 28px',
                   borderRadius: '50px',
                   cursor: 'pointer',
@@ -154,14 +187,15 @@ function PropertyShowcase() {
           </div>
         </div>
       </div>
+      )}
 
       {/* Tab Bar */}
       <div className="ps-subnav">
         <div className="ps-subnav-inner">
           <a href="#details" className={activeTab === "details" ? "active" : ""} onClick={(e) => handleTabClick(e, "details")}>Property Details</a>
           <a href="#layout" className={activeTab === "layout" ? "active" : ""} onClick={(e) => handleTabClick(e, "layout")}>Layout</a>
-          <a href="#location" className={activeTab === "location" ? "active" : ""} onClick={(e) => handleTabClick(e, "location")}>Location</a>
-          <a href="#amenities" className={activeTab === "amenities" ? "active" : ""} onClick={(e) => handleTabClick(e, "amenities")}>Amenities</a>
+          {activeProp.locationImg && <a href="#location" className={activeTab === "location" ? "active" : ""} onClick={(e) => handleTabClick(e, "location")}>Location</a>}
+          {activeProp.status !== "Completed" && <a href="#amenities" className={activeTab === "amenities" ? "active" : ""} onClick={(e) => handleTabClick(e, "amenities")}>Amenities</a>}
         </div>
       </div>
 
@@ -187,10 +221,12 @@ function PropertyShowcase() {
                 <small>Project Status:</small>
                 <p>{activeProp.status}</p>
               </div>
+              {activeProp.status !== "Completed" && (
               <div className="ps-stat">
                 <small>Location:</small>
                 <p>{activeProp.location}</p>
               </div>
+              )}
               <div className="ps-stat">
                 <small>Total Area:</small>
                 <p>{activeProp.area}</p>
@@ -207,6 +243,7 @@ function PropertyShowcase() {
                 <small>Available Plots:</small>
                 <p style={{ color: 'var(--sea)', fontWeight: '700' }}>{activeProp.availablePlots}</p>
               </div>
+              {activeProp.status !== "Completed" && (
               <div className="ps-stat" style={{ gridColumn: 'span 2' }}>
                 <small>Map Link:</small>
                 <p>
@@ -216,6 +253,7 @@ function PropertyShowcase() {
                   </a>
                 </p>
               </div>
+              )}
             </div>
           </div>
           
@@ -242,7 +280,7 @@ function PropertyShowcase() {
             </div>
           </div>
 
-          <img src={activeProp.layoutImg} alt={`${activeProp.name} Layout`} style={{ width: '100%', borderRadius: '16px' }} />
+          <img src={activeProp.layoutImg} alt={`${activeProp.name} Layout`} style={{ width: '100%', borderRadius: 'var(--ds-radius-none)' }} />
         </div>
       )}
 
@@ -250,17 +288,18 @@ function PropertyShowcase() {
       {activeProp.locationImg && (
         <div id="location-section" className="wrap" style={{ paddingTop: '80px', paddingBottom: '80px', borderTop: '1px solid rgba(0,0,0,0.08)' }}>
           <h2 style={{ fontSize: '32px', marginBottom: '30px', textAlign: 'center', color: 'var(--ink)' }}>Project Location</h2>
-          <img src={activeProp.locationImg} alt={`${activeProp.name} Location`} style={{ width: '100%', borderRadius: '16px' }} />
+          <img src={activeProp.locationImg} alt={`${activeProp.name} Location`} style={{ width: '100%', borderRadius: 'var(--ds-radius-none)' }} />
         </div>
       )}
 
       {/* Amenities Section - Creative Layout */}
+      {activeProp.status !== "Completed" && (
       <div id="amenities-section" style={{ background: 'var(--ink)', paddingTop: '100px', paddingBottom: '100px' }}>
         <style>{`
           .creative-amenity-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
+            border-radius: var(--ds-radius-none);
             padding: 24px;
             display: flex;
             align-items: center;
@@ -308,14 +347,14 @@ function PropertyShowcase() {
                     width: '100%', 
                     aspectRatio: '16/9', 
                     objectFit: 'cover', 
-                    borderRadius: '24px 0 0 24px', 
+                    borderRadius: 'var(--ds-radius-none)', 
                     display: 'block',
                     WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
                     maskImage: 'linear-gradient(to right, black 50%, transparent 100%)'
                   }} 
                 />
               ) : (
-                <div style={{ backgroundColor: 'rgba(255,255,255,0.03)', width: '100%', aspectRatio: '16/9', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <div style={{ backgroundColor: 'rgba(255,255,255,0.03)', width: '100%', aspectRatio: '16/9', borderRadius: 'var(--ds-radius-none)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: '12px', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase' }}>Visual Coming Soon</div>
                 </div>
               )}
@@ -323,7 +362,7 @@ function PropertyShowcase() {
             
             {/* Right Details - Creative Amenities Cards */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
-              {AMENITIES_DATA.map((item, idx) => (
+              {(activeProp.name === "Golden City" ? GOLDEN_CITY_AMENITIES : AMENITIES_DATA).map((item, idx) => (
                 <div key={idx} className="creative-amenity-card" style={{ justifyContent: 'center', textAlign: 'center' }}>
                   <span style={{ fontWeight: 600, color: '#ffffff', fontSize: '15px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{item}</span>
                 </div>
@@ -332,8 +371,10 @@ function PropertyShowcase() {
           </div>
         </div>
       </div>
+      )}
     </section>
   );
 }
 
+export { VEL_PROPERTIES, COMPLETED_PROPERTIES, ALL_PROPERTIES };
 export default PropertyShowcase;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import vhgLogo from '../assets/VHG-Logo-Final.png';
+import vhgLogo from '../assets/vhg-logo-new.svg';
 
 function Footer() {
   return (
@@ -9,7 +9,7 @@ function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: "22px" }}>
-              <img src={vhgLogo} alt="VHG Logo" style={{ height: '88px', width: 'auto' }} />
+              <img src={vhgLogo} alt="Vel Homes Global" style={{ height: '68px', width: 'auto' }} />
             </div>
             <p>Land with clarity. Ownership with confidence. A legacy you can walk.</p>
             <address>

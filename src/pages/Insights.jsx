@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
@@ -28,7 +29,7 @@ function InsightsPage() {
 
       <section className="page-hero" data-screen-label="01 Insights Hero">
         <div className="page-hero-inner">
-          <div className="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Blogs & Insights</span></div>
+          <div className="breadcrumb"><Link to="/">Home</Link><span>/</span><span>Blogs & Insights</span></div>
           <div className="eyebrow" style={{color:"rgba(255,255,255,0.9)"}}>Quarterly reports · monthly guides</div>
           <h1>The thinking <em>behind</em><br/>the land we sell.</h1>
           <p>Market reports, investment frameworks, legal explainers, and case studies written by our analysts, planners and lawyers for buyers who want to understand what they're buying.</p>

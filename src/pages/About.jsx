@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import '../about.css';
@@ -95,7 +96,7 @@ function AboutHero() {
     <section className="about-hero" data-screen-label="01 About Hero">
       <div className="about-hero-inner">
         <div className="breadcrumb">
-          <a href="index.html">Home</a>
+          <Link to="/">Home</Link>
           <span>/</span>
           <span>About Us</span>
         </div>
@@ -131,7 +132,7 @@ function OurStory() {
       <div className="wrap">
         <div className="story-grid">
           <RevealA className="story-media">
-            <ZoomA className="ph"></ZoomA>
+            <ZoomA className="layout-img" style={{ backgroundImage: `url(/uploads/Timeline.png)`, position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center' }}></ZoomA>
           </RevealA>
           <RevealA className="story-body" delay={120}>
             <div className="eyebrow">Our Story</div>

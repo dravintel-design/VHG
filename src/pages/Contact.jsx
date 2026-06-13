@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
@@ -15,7 +16,7 @@ function ContactPage() {
 
       <section className="page-hero" data-screen-label="01 Contact Hero">
         <div className="page-hero-inner">
-          <div className="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact Us</span></div>
+          <div className="breadcrumb"><Link to="/">Home</Link><span>/</span><span>Contact Us</span></div>
           <div className="eyebrow" style={{color:"rgba(255,255,255,0.9)"}}>Mon–Sat · 9am–7pm IST</div>
           <h1>Let's talk about <em>land,</em><br/>not leads.</h1>
           <p>Whether you're a first-time plot buyer, an NRI investor, or a landowner exploring an alliance a real human will respond within four business hours.</p>

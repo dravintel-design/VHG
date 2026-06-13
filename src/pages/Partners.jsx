@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 const PROGRAMS = [
@@ -18,7 +19,7 @@ function PartnersPage() {
 
       <section className="page-hero" data-screen-label="01 Partners Hero">
         <div className="page-hero-inner">
-          <div className="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Partner Programs</span></div>
+          <div className="breadcrumb"><Link to="/">Home</Link><span>/</span><span>Partner Programs</span></div>
           <div className="eyebrow" style={{color:"rgba(255,255,255,0.9)"}}>7 Programs · 1,200+ Active Partners</div>
           <h1>Grow with us, <em>not just</em><br/>around us.</h1>
           <p>Seven distinct partnership tracks for landowners, agents, investors, NRIs, customers, brands and vendors each with clear terms, predictable payouts, and a real human relationship.</p>

@@ -19,8 +19,8 @@ function Tweaks() {
 
   // Apply accent live
   useEffect(() => {
-    document.documentElement.style.setProperty("--accent", t.accent || "#c99b14");
-    document.documentElement.style.setProperty("--sea", t.sea || "#c99b14");
+    document.documentElement.style.setProperty("--accent", t.accent || "#d4a017");
+    document.documentElement.style.setProperty("--sea", t.sea || "#d4a017");
     if (t.displayFont) {
       document.documentElement.style.setProperty("--display", `"${t.displayFont}", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`);
     }
@@ -47,6 +47,7 @@ function Tweaks() {
 
       <label>Display font</label>
       <select value={t.displayFont} onChange={(e) => update("displayFont", e.target.value)}>
+        <option>Onest</option>
         <option>Proxima Nova</option>
         <option>Cormorant Garamond</option>
         <option>Playfair Display</option>

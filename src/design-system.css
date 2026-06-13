@@ -1,0 +1,250 @@
+/* ============================================================
+   VEL HOMES GLOBAL — DESIGN SYSTEM v1.0
+   Land. Legacy. Life.
+
+   Brand palette (from brand swatches):
+     Colour 01 — White  #ffffff
+     Colour 02 — Cream  #f6ead3
+     Colour 03 — Gold   #d4a017
+     Colour 04 — Black  #000000
+
+   Typeface: Onest (variable, 100–900)
+   ============================================================ */
+
+:root {
+  /* ----------------------------------------------------------
+     1. PRIMITIVE COLOR TOKENS
+     ---------------------------------------------------------- */
+
+  /* Brand core */
+  --vhg-white: #ffffff;
+  --vhg-cream: #f6ead3;
+  --vhg-gold:  #d4a017;
+  --vhg-black: #000000;
+
+  /* Gold scale — tints & shades of #d4a017 */
+  --vhg-gold-50:  #fdf8ec;
+  --vhg-gold-100: #faeecd;
+  --vhg-gold-200: #f2d06a;
+  --vhg-gold-300: #e9c247;
+  --vhg-gold-400: #dfb12b;
+  --vhg-gold-500: #d4a017;   /* brand gold */
+  --vhg-gold-600: #b38711;   /* hover / text-safe on cream */
+  --vhg-gold-700: #8f6c0d;   /* text-safe on white (AA) */
+  --vhg-gold-800: #6b510a;
+  --vhg-gold-900: #473606;
+
+  /* Cream scale — tints & shades of #f6ead3 */
+  --vhg-cream-50:  #fdfaf5;  /* page background */
+  --vhg-cream-100: #faf3e4;
+  --vhg-cream-200: #f6ead3;  /* brand cream */
+  --vhg-cream-300: #efddb8;
+  --vhg-cream-400: #e6cd97;
+
+  /* Neutral scale — tints of #000000 */
+  --vhg-ink-950: #000000;    /* brand black */
+  --vhg-ink-900: #0a0a0a;    /* primary text */
+  --vhg-ink-700: #3d3d3d;
+  --vhg-ink-500: #555555;
+  --vhg-ink-400: #737373;
+  --vhg-ink-200: #d6d6d6;
+  --vhg-ink-100: #ebebeb;
+
+  /* On-dark (over black / photography) */
+  --vhg-on-dark:   #ffffff;
+  --vhg-on-dark-2: rgba(255, 255, 255, 0.86);
+  --vhg-on-dark-3: rgba(255, 255, 255, 0.65);
+
+  /* ----------------------------------------------------------
+     2. SEMANTIC COLOR TOKENS
+     ---------------------------------------------------------- */
+  --ds-bg:            var(--vhg-cream-50);
+  --ds-bg-alt:        var(--vhg-cream-200);
+  --ds-bg-dark:       var(--vhg-ink-950);
+  --ds-surface:       var(--vhg-white);
+
+  --ds-text:          var(--vhg-ink-900);
+  --ds-text-secondary:var(--vhg-ink-500);
+  --ds-text-muted:    var(--vhg-ink-400);
+  --ds-text-inverse:  var(--vhg-white);
+
+  --ds-accent:        var(--vhg-gold-500);
+  --ds-accent-hover:  var(--vhg-gold-600);
+  --ds-accent-bright: var(--vhg-gold-200);
+  --ds-accent-text:   var(--vhg-gold-700); /* gold as text on light bg */
+
+  --ds-border:        var(--vhg-ink-200);
+  --ds-border-dark:   rgba(255, 255, 255, 0.18);
+  --ds-focus-ring:    var(--vhg-gold-500);
+
+  /* ----------------------------------------------------------
+     3. TYPOGRAPHY — Onest variable (100–900)
+     ---------------------------------------------------------- */
+  --ds-font-sans:
+    "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ds-font-display: var(--ds-font-sans);
+  --ds-font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Weights (variable axis stops) */
+  --ds-weight-light:    300;
+  --ds-weight-regular:  400;
+  --ds-weight-medium:   500;
+  --ds-weight-semibold: 600;
+  --ds-weight-bold:     700;
+  --ds-weight-black:    800;
+
+  /* Type scale (fluid where it matters) */
+  --ds-text-display-xl: clamp(56px, 8vw, 110px);  /* hero numbers / statements */
+  --ds-text-display:    clamp(40px, 5vw, 76px);   /* section heroes */
+  --ds-text-h1:         clamp(36px, 4.5vw, 66px);
+  --ds-text-h2:         clamp(28px, 3.5vw, 52px);
+  --ds-text-h3:         32px;
+  --ds-text-h4:         24px;
+  --ds-text-h5:         20px;
+  --ds-text-body-lg:    18px;
+  --ds-text-body:       16px;
+  --ds-text-body-sm:    14px;
+  --ds-text-caption:    12px;
+  --ds-text-overline:   11px;
+
+  /* Line heights */
+  --ds-leading-tight:  1.1;
+  --ds-leading-snug:   1.3;
+  --ds-leading-normal: 1.6;
+
+  /* Letter spacing */
+  --ds-tracking-tight:    -0.02em;
+  --ds-tracking-normal:   0;
+  --ds-tracking-wide:     0.08em;
+  --ds-tracking-overline: 0.2em;  /* uppercase labels */
+  --ds-tracking-brand:    0.3em;  /* logo / wordmark */
+
+  /* ----------------------------------------------------------
+     4. SPACING — 4px base scale
+     ---------------------------------------------------------- */
+  --ds-space-1:  4px;
+  --ds-space-2:  8px;
+  --ds-space-3:  12px;
+  --ds-space-4:  16px;
+  --ds-space-5:  20px;
+  --ds-space-6:  24px;
+  --ds-space-8:  32px;
+  --ds-space-10: 40px;
+  --ds-space-12: 48px;
+  --ds-space-16: 64px;
+  --ds-space-20: 80px;
+  --ds-space-24: 96px;
+  --ds-space-32: 128px;
+
+  /* Layout */
+  --ds-container-max: 1320px;
+  --ds-container-pad: 60px;
+  --ds-nav-height:    84px;
+
+  /* ----------------------------------------------------------
+     5. RADII, SHADOWS, MOTION, LAYERS
+     ---------------------------------------------------------- */
+  --ds-radius-none: 0;          /* default — VHG is sharp-edged */
+  --ds-radius-sm:   2px;
+  --ds-radius-md:   6px;
+  --ds-radius-pill: 999px;
+
+  --ds-shadow-sm: 0 2px 8px rgba(10, 10, 10, 0.06);
+  --ds-shadow-md: 0 8px 28px rgba(10, 10, 10, 0.1);
+  --ds-shadow-lg: 0 20px 60px rgba(10, 10, 10, 0.18);
+  --ds-shadow-gold: 0 8px 28px rgba(212, 160, 23, 0.28);
+
+  --ds-ease:       cubic-bezier(0.22, 1, 0.36, 1);
+  --ds-duration-fast:   150ms;
+  --ds-duration-base:   300ms;
+  --ds-duration-slow:   600ms;
+
+  --ds-z-nav:     100;
+  --ds-z-overlay: 200;
+  --ds-z-modal:   300;
+  --ds-z-toast:   400;
+}
+
+/* ============================================================
+   6. BASE COMPONENT PRIMITIVES
+   ============================================================ */
+
+/* --- Buttons --- */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-space-2);
+  padding: 14px 30px;
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-body-sm);
+  font-weight: var(--ds-weight-semibold);
+  letter-spacing: var(--ds-tracking-wide);
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: var(--ds-radius-none);
+  cursor: pointer;
+  transition: background var(--ds-duration-base) var(--ds-ease),
+              color var(--ds-duration-base) var(--ds-ease),
+              border-color var(--ds-duration-base) var(--ds-ease);
+}
+.ds-btn--primary {
+  background: var(--ds-accent);
+  color: var(--vhg-ink-950);
+}
+.ds-btn--primary:hover { background: var(--ds-accent-hover); color: var(--vhg-white); }
+.ds-btn--dark {
+  background: var(--vhg-ink-950);
+  color: var(--vhg-white);
+}
+.ds-btn--dark:hover { background: var(--ds-accent); color: var(--vhg-ink-950); }
+.ds-btn--outline {
+  background: transparent;
+  color: var(--ds-text);
+  border-color: currentColor;
+}
+.ds-btn--outline:hover { background: var(--ds-accent); border-color: var(--ds-accent); color: var(--vhg-ink-950); }
+.ds-btn--ghost-light {
+  background: transparent;
+  color: var(--vhg-white);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.ds-btn--ghost-light:hover { background: var(--vhg-white); color: var(--vhg-ink-950); }
+
+/* --- Overline label (kickers / eyebrows) --- */
+.ds-overline {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-overline);
+  font-weight: var(--ds-weight-semibold);
+  letter-spacing: var(--ds-tracking-overline);
+  text-transform: uppercase;
+  color: var(--ds-accent-text);
+}
+.ds-overline--on-dark { color: var(--ds-accent-bright); }
+
+/* --- Badge --- */
+.ds-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: var(--ds-text-overline);
+  font-weight: var(--ds-weight-semibold);
+  letter-spacing: var(--ds-tracking-wide);
+  text-transform: uppercase;
+  background: var(--vhg-cream-200);
+  color: var(--vhg-ink-900);
+}
+.ds-badge--gold { background: var(--ds-accent); color: var(--vhg-ink-950); }
+.ds-badge--dark { background: var(--vhg-ink-950); color: var(--vhg-white); }
+
+/* --- Card --- */
+.ds-card {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  padding: var(--ds-space-8);
+}
+.ds-card--cream { background: var(--vhg-cream-200); border-color: transparent; }
+.ds-card--dark  { background: var(--vhg-ink-950); color: var(--vhg-white); border-color: var(--ds-border-dark); }
+
+/* --- Divider --- */
+.ds-divider { border: 0; border-top: 1px solid var(--ds-border); }
+.ds-divider--gold { border-top: 2px solid var(--ds-accent); width: 64px; }
